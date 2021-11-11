@@ -4,7 +4,16 @@ CC = gcc
 
 FLAGS = -Wall -Werror -Wextra
 
-FILES =	so_long.c\
+FILES =	main.c\
+		move.c\
+		hooks.c\
+		paint.c\
+		load.c\
+		map.c\
+		split.c\
+		strlen.c\
+		strjoin.c\
+		calloc.c\
 
 $(NAME): 
 	@$(CC) -Imlx $(FLAGS) $(FILES) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
