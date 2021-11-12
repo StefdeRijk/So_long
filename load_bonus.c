@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "so_long_bonus.h"
 static int		ft_render_game(t_assets *assets);
 
 static t_assets	ft_load_map(t_assets assets);
@@ -7,15 +7,25 @@ t_assets	ft_load_assets(t_assets assets)
 {
 	assets.player_right = mlx_xpm_file_to_image(assets.mlx, \
 	"./Assets/Player_right.xpm", &assets.sprite_size, &assets.sprite_size);
+	assets.player_left = mlx_xpm_file_to_image(assets.mlx, \
+	"./Assets/Player_left.xpm", &assets.sprite_size, &assets.sprite_size);
+	assets.player_up = mlx_xpm_file_to_image(assets.mlx, \
+	"./Assets/Player_up.xpm", &assets.sprite_size, &assets.sprite_size);
+	assets.player_down = mlx_xpm_file_to_image(assets.mlx, \
+	"./Assets/Player_down.xpm", &assets.sprite_size, &assets.sprite_size);
 	assets.grass = mlx_xpm_file_to_image(assets.mlx, \
 	"./Assets/Grass.xpm", &assets.sprite_size, &assets.sprite_size);
 	assets.rock = mlx_xpm_file_to_image(assets.mlx, \
 	"./Assets/Rock.xpm", &assets.sprite_size, &assets.sprite_size);
 	assets.heart = mlx_xpm_file_to_image(assets.mlx, \
 	"./Assets/Heart.xpm", &assets.sprite_size, &assets.sprite_size);
+	assets.exit_red = mlx_xpm_file_to_image(assets.mlx, \
+	"./Assets/Exit_inactive.xpm", &assets.sprite_size, &assets.sprite_size);
 	assets.exit_green = mlx_xpm_file_to_image(assets.mlx, \
 	"./Assets/Exit_active.xpm", &assets.sprite_size, &assets.sprite_size);
-	assets.exit = assets.exit_green;
+	assets.skeleton = mlx_xpm_file_to_image(assets.mlx, \
+	"./Assets/Skeleton.xpm", &assets.sprite_size, &assets.sprite_size);
+	assets.exit = assets.exit_red;
 	assets.player = assets.player_right;
 	return (assets);
 }

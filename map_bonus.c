@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "so_long_bonus.h"
 static t_assets	check_map2(t_assets assets, int i, int j);
 
 static t_assets	check_map3(t_assets assets, int i, int j);
@@ -59,7 +59,7 @@ static t_assets	check_characters(t_assets assets, int i, int j)
 {
 	if (assets.map[j][i] != '1' && assets.map[j][i] != '0' \
 	&& assets.map[j][i] != 'P' && assets.map[j][i] != 'C' \
-	&& assets.map[j][i] != 'E')
+	&& assets.map[j][i] != 'E' && assets.map[j][i] != 'S')
 		ft_error(assets, "Error\nMap has invalid characters\n");
 	if (assets.map[j][i] == 'P')
 		assets.players += 1;

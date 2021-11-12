@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "so_long_bonus.h"
 static t_assets	ft_move2(t_assets assets, int new_x, int new_y);
 
 static t_assets	ft_move3(t_assets assets, int new_x, int new_y);
@@ -32,6 +32,8 @@ static t_assets	ft_move2(t_assets assets, int new_x, int new_y)
 			return (assets);
 		if (assets.map[new_y][new_x] == 'C')
 			assets.collectables -= 1;
+		if (assets.map[new_y][new_x] == 'S')
+			ft_error(assets, "You lost\n");
 		assets.map[assets.player_y][assets.player_x] = '0';
 		assets.map[new_y][new_x] = 'P';
 	}
@@ -51,6 +53,8 @@ static t_assets	ft_move3(t_assets assets, int new_x, int new_y)
 		printf("%s", "You won!\n");
 		ft_close(0, &assets);
 	}
+	if (assets.map[new_y][new_x] == 'S')
+		ft_error(assets, "You lost\n");
 	assets.map[assets.player_y][assets.player_x] = '0';
 	assets.map[new_y][new_x] = 'P';
 	return (assets);

@@ -1,5 +1,4 @@
-#include "so_long.h"
-
+#include "so_long_bonus.h"
 int	main(int argc, char **argv)
 {
 	t_assets	assets;
@@ -12,7 +11,7 @@ int	main(int argc, char **argv)
 		assets.end_access = 0;
 		assets.moves = 0;
 		assets.sprite_size = 32;
-		assets.error_message = "Error\n";
+		assets.error_message = "Error\nYou lost :(\n";
 		assets = ft_load_assets(assets);
 		assets = ft_load_game(assets);
 		mlx_hook(assets.win, 17, 0L, ft_close, &assets);
@@ -21,5 +20,4 @@ int	main(int argc, char **argv)
 	}
 	else
 		printf("%s\n", "Error\nInvalid amount of arguments");
-	return (0);
 }

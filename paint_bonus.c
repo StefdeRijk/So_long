@@ -1,4 +1,4 @@
-#include "so_long.h"
+#include "so_long_bonus.h"
 static t_assets	ft_paint_asset(t_assets assets, char c, int x, int y);
 
 t_assets	ft_paint_window(t_assets assets)
@@ -41,5 +41,8 @@ static t_assets	ft_paint_asset(t_assets assets, char c, int x, int y)
 	if (c == 'E')
 		mlx_put_image_to_window(assets.mlx, assets.win, \
 		assets.exit, x * 32, y * 32);
+	if (c == 'S')
+		mlx_put_image_to_window(assets.mlx, assets.win, \
+		assets.skeleton, x * 32, y * 32);
 	return (assets);
 }
